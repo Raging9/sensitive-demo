@@ -1,0 +1,46 @@
+server:
+  port: 8080
+advance:
+  tool:
+    datamask:
+      close: false
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  shardingsphere:
+    datasource:
+      names: ds
+      ds:
+        url: jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+        type: com.alibaba.druid.pool.DruidDataSource
+        username: root
+        password: mysql
+        driver-class-name: com.mysql.cj.jdbc.Driver
+    encrypt:
+      encryptors:
+        encryptors_aes:
+          type: aes
+          props:
+            aes.key.value: 123456
+          qualified-columns: t_user.phone
+      tables:
+        t_user:
+          columns:
+            phone:
+              cipherColumn: phone
+              encryptor: encryptors_aes
+    props:
+      sql:
+        show: true
+      query:
+        with:
+          cipher:
+            column: true
+#日志打印
+logging:
+  level:
+    root: info
+    org.springframework.web: info
+    com.lucifer.sharding.dao: debug
+    druid.sql: debug
+
