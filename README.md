@@ -16,7 +16,7 @@ public @interface SensitiveInfo {
 }
 ```
 
-在实体类上需要脱敏的字段添加@SensitiveInfo注解，，添加自定义的电话号码处理器，返回json数据到前端时，会进行脱敏
+在实体类上需要脱敏的字段添加@SensitiveInfo注解，添加自定义的电话号码处理器，返回json数据到前端时，会进行脱敏
 
 ```java
 @Data
