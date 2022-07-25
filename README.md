@@ -88,8 +88,3 @@ spring:
           cipher:
             column: true
 ```
-
-- 存储效果：
-
-![image-20220725134340204](C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20220725134340204.png)
-
