@@ -27,7 +27,8 @@ spring:
         t_user:
           columns:
             phone:
-              cipherColumn: phone
+              plainColumn: phone
+              cipherColumn: phone_cipher
               encryptor: encryptors_aes
     props:
       sql:
@@ -43,4 +44,3 @@ logging:
     org.springframework.web: info
     com.lucifer.sharding.dao: debug
     druid.sql: debug
-

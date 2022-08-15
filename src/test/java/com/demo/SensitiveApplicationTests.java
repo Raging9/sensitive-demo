@@ -26,15 +26,16 @@ public class SensitiveApplicationTests {
     @Test
     public void test(){
         User user = new User();
-        user.setName("张三");
-        user.setPhone("15178907415");
+        user.setName("李四");
+        user.setPhone("15178907416");
+        user.setPassword("123456");
         userMapper.insert(user);
     }
 
     @Test
     public void query(){
         LambdaQueryWrapper<User> qw = new LambdaQueryWrapper<>();
-        qw.eq(User::getName, "张三").eq(User::getPhone, "15178907415");
+        qw.eq(User::getName, "李四").eq(User::getPhone, "15178907415");
         List<User> users = userMapper.selectList(qw);
         System.out.printf(users.toString());
     }

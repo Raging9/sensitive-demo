@@ -20,4 +20,6 @@ public class User {
     private String name;
     @SensitiveInfo(handler = com.demo.handler.PhoneMaskHandler.class)
     private String phone;
+    @SensitiveInfo
+    private String password;
 }
