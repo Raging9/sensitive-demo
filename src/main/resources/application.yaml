@@ -36,7 +36,7 @@ spring:
       query:
         with:
           cipher:
-            column: true
+            column: false
 #日志打印
 logging:
   level:

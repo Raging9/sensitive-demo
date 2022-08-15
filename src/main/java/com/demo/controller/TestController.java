@@ -3,6 +3,7 @@ package com.demo.controller;
 import com.demo.domain.User;
 import com.demo.service.UserService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,5 +25,14 @@ public class TestController {
     public List<User> getUser(){
         List<User> list = userService.list();
         return list;
+    }
+
+    /**
+     * 清洗数据
+     */
+    @PostMapping("/update")
+    public void update(){
+        List<User> list = userService.list();
+        userService.updateBatchById(list);
     }
 }
